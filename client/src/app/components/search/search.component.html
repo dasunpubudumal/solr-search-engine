@@ -1,0 +1,66 @@
+<!--<input type="text" [(ngModel)]="searchString" name="searchString" (keyup.enter)="_get()">-->
+
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Enter the search query." type="text" [(ngModel)]="searchString" name="searchString" (keyup.enter)="_get()">
+  </mat-form-field>
+
+</form>
+
+
+<br />
+
+<div class="container">
+  <table mat-table [dataSource]="results" multiTemplateDataRows class="mat-elevation-z8">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="artist">
+      <th mat-header-cell *matHeaderCellDef> Artist </th>
+      <td mat-cell *matCellDef="let result"> {{result.artist}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="author">
+      <th mat-header-cell *matHeaderCellDef> Author </th>
+      <td mat-cell *matCellDef="let result"> {{result.author}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="lyrics">
+      <th mat-header-cell *matHeaderCellDef> Lyrics </th>
+      <td mat-cell *matCellDef="let result"> {{result.lyrics}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef> Title </th>
+      <td mat-cell *matCellDef="let result"> {{result.title}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="expandedDetail">
+      <td mat-cell *matCellDef="let result" [attr.colspan]="displayedColumns.length">
+        <div class="example-element-detail"
+             [@detailExpand]="result == expandedElement ? 'expanded' : 'collapsed'">
+          <div class="example-element-diagram">
+            <div class="example-element-position"> {{result.artist}} </div>
+            <div class="example-element-symbol"> {{result.author}} </div>
+            <div class="example-element-name"> {{result.lyrics}} </div>
+            <div class="example-element-weight"> {{result.title}} </div>
+          </div>
+          <div class="example-element-description">
+            {{result.lyrics}}
+          </div>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let result; columns: displayedColumns;"
+        class="example-element-row"
+        [class.example-expanded-row]="expandedElement === result"
+        (click)="expandedElement = expandedElement === result ? null : result">
+    </tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
