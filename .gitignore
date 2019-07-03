@@ -32,3 +32,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Solr Utilities ###
+solr-utilities/json-parser/.idea
+solr-utilities/json-parser/node_modules
+solr-utilties/lyric-crawler/.idea
