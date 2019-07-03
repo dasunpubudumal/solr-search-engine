@@ -34,6 +34,7 @@ public class SolrController {
         SolrQuery query = new SolrQuery();
         ArrayList<LyricBean> list = new ArrayList<LyricBean>();
         query.set("q", term);
+        query.set("fl", "artist,author,title,lyrics,score");
         try {
             response = solrClient.query(query);
             SolrDocumentList documentList = response.getResults();
@@ -42,6 +43,7 @@ public class SolrController {
                 lyricBean.setTitle((String) document.getFieldValue("title"));
                 lyricBean.setArtist((String) document.getFieldValue("artist"));
                 lyricBean.setAuthor((String) document.getFieldValue("author"));
+                lyricBean.setScore((float) document.getFieldValue("score"));
                 Object[] common = {document.getFieldValue("common")};
                 lyricBean.setCommon(common);
                 lyricBean.setLyrics((String) document.getFieldValue("lyrics") );

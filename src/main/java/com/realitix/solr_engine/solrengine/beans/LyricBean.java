@@ -14,6 +14,8 @@ public class LyricBean {
     private String author;
     @Field("lyrics")
     private String lyrics;
+    @Field("score")
+    private float score;
 
     public LyricBean() { }
 
@@ -55,6 +57,14 @@ public class LyricBean {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public float getScore() {
+        return score;
+    }
+
+    public void setScore(float score) {
+        this.score = score;
     }
 
     @Override
