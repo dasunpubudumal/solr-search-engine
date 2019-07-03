@@ -1,5 +1,6 @@
 package com.realitix.solr_engine.solrengine.controllers;
 
+import com.realitix.solr_engine.solrengine.SolrEngineApplication;
 import com.realitix.solr_engine.solrengine.beans.LyricBean;
 import org.apache.log4j.Logger;
 import org.apache.solr.client.solrj.SolrQuery;
@@ -24,7 +25,11 @@ public class SolrController {
 
     @PostConstruct
     public void initialize() {
-        solrClient = new HttpSolrClient.Builder("http://localhost:8983/solr/songs").build();
+        String baseUrl = "http://" + SolrEngineApplication.configuration.getSolr().getIp()
+                + ":" + SolrEngineApplication.configuration.getSolr().getPort()
+                + "/solr/" + SolrEngineApplication.configuration.getSolr().getCore();
+        solrClient = new HttpSolrClient.Builder(baseUrl).build();
+        System.out.println(baseUrl);
         solrClient.setParser(new XMLResponseParser());
     }
 
