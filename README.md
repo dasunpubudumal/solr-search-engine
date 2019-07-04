@@ -1,6 +1,8 @@
 # Solr Search Engine (CS4642 Assignment)
 
+<div align="center">
 <a href="https://ibb.co/M2F8TvV"><img src="https://i.ibb.co/X2cyBQs/Screenshot-from-2019-07-03-12-26-31.png" alt="Screenshot-from-2019-07-03-12-26-31" border="0"></a>
+</div>
 
 ## Setup
 
