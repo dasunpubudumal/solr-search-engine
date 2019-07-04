@@ -17,6 +17,6 @@
 
 ## Add docs to solr core using following command 
 
-windows: java -Dc=songs -jar post.jar song.xml
-linux: ./post -c songs songs.xml
+windows: `java -Dc=songs -jar post.jar song.xml`
+linux: `./post -c songs songs.xml`
 
