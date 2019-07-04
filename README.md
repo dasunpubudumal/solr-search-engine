@@ -13,7 +13,6 @@
 - Title (Sinhala)
 
 * Author’s name needs to be converted to sinhala since we are processing the whole query in Sinhala, and therefore we converted them manually. 
-
 * [Scrapy](https://scapy.net/) was used to crawl the website and a seperate application was written to convert the raw data to the appropriate format which is accepted by Solr.
 
 ### Indexing Filters
