@@ -7,10 +7,10 @@
 ## Project Description
 
 * Lyricslk.com provides a collection of songs along with following attributes.
-- Lyrics (Sinhala) 
-- Artist’s name (Sinhala) 
-- Author’s name (English)
-- Title (Sinhala)
+    - Lyrics (Sinhala) 
+    - Artist’s name (Sinhala) 
+    - Author’s name (English)
+    - Title (Sinhala)
 
 * Author’s name needs to be converted to sinhala since we are processing the whole query in Sinhala, and therefore we converted them manually. 
 * [Scrapy](https://scapy.net/) was used to crawl the website and a seperate application was written to convert the raw data to the appropriate format which is accepted by Solr.
