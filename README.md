@@ -12,11 +12,11 @@
 
 ## Set up solr core
 
-* Copy the template folder to 'solr-xxx/server/solr/' and rename the folder to 'songs'
+* Copy the template folder to `solr-xxx/server/solr/` and rename the folder to the name of the core you specify in `config.yaml`.
 * Create the core using solr admin
 
 ## Add docs to solr core using following command 
 
-windows: `java -Dc=songs -jar post.jar song.xml`
-linux: `./post -c songs songs.xml`
+* Windows: `java -Dc=songs -jar post.jar song.xml`
+* Linux: `./post -c songs songs.xml`
 
