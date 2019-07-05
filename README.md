@@ -75,3 +75,7 @@
 * Windows: `java -Dc=songs -jar post.jar song.xml`
 * Linux: `./post -c songs songs.xml`
 
+## Contributors
+* @asmanjitha
+* @drox2014
+* @ashendes
