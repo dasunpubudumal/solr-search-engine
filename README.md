@@ -17,7 +17,7 @@
 
 ### Indexing Filters
 
-* SWildcard FIlter
+* Wildcard FIlter
 * Stop Words Filter
 * Hunspell Stem Filter Factory for Etemming
 
